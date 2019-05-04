@@ -1,5 +1,12 @@
+@import '_var';
 .loading {
-  grid-column: 3;
+  grid-column: 1;
   justify-self: center;
   align-self: center;
+  @media #{$medium-up} {
+    grid-column: 2;
+  }
+  @media #{$large-up} {
+    grid-column: 3;
+  }
 }
