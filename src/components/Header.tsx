@@ -6,19 +6,21 @@ interface Option {
   value: string;
 }
 
-const OptionList: Array<Option> = [
-  { label: 'Fitler Status', value: '' },
-  { label: 'Current', value: 'current' },
-  { label: 'Sold', value: 'sold' }
-];
 export interface HeaderProps {
   onSelect(status: string): void;
+  filter: () => Array<string>;
 }
 
 const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
-  const { onSelect } = props;
-
-  const options = OptionList.map((opt: Option, index: number) => {
+  const { onSelect, filter } = props;
+  const OptionList = () => {
+    const options = [{ label: 'Fitler Status', value: '' }];
+    filter().forEach(o => {
+      options.push({ label: o.replace('_', ' '), value: o.toLowerCase() });
+    });
+    return options;
+  };
+  const options = OptionList().map((opt: Option, index: number) => {
     return (
       <option value={opt.value} key={index}>
         {opt.label}
