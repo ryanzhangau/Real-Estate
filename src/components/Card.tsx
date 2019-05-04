@@ -22,7 +22,7 @@ const Card: React.FC<CardProps> = (props: CardProps) => {
   return (
     <div className='Card_wrap'>
       <span className='Card_price'>${item.price}</span>
-      <span className='Card_status'>{item.status}</span>
+      <span className='Card_status'>{item.status.replace('_', ' ')}</span>
       <span className='Card_featured-image'>
         <img src={item.image} alt={`${item.street} ${item.suburb}`} />
       </span>
