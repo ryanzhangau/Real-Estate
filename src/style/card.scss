@@ -1,0 +1,49 @@
+.Card_wrap {
+  display: grid;
+  grid-template-rows: 30px 1fr 50px 30px 30px;
+  grid-template-columns: 0.5fr 0.5fr;
+  padding: 20px 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.Card_price {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.Card_status {
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: flex-end;
+}
+
+.Card_featured-image {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  max-height: 213px;
+  overflow: hidden;
+}
+.Card_wrap img {
+  display: block;
+  max-width: 100%;
+}
+
+.Card_street {
+  grid-row: 3;
+  grid-column: 1 / span 2;
+  justify-self: center;
+  padding-top: 20px;
+}
+
+.Card_suburb {
+  grid-row: 4;
+  grid-column: 1 / span 2;
+  justify-self: center;
+}
+
+.Card_state {
+  grid-row: 5;
+  grid-column: 1 / span 2;
+  justify-self: center;
+}

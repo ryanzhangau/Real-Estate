@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/header.scss';
 
 interface Option {
   label: string;
@@ -7,18 +8,19 @@ interface Option {
 
 export interface HeaderProps {
   onSelect(status: string): void;
+  filter: () => Array<string>;
 }
 
-const OptionList: Array<Option> = [
-  { label: 'Fitler Status', value: '' },
-  { label: 'Current', value: 'current' },
-  { label: 'Sold', value: 'sold' }
-];
-
 const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
-  const { onSelect } = props;
-
-  const options = OptionList.map((opt: Option, index: number) => {
+  const { onSelect, filter } = props;
+  const OptionList = () => {
+    const options = [{ label: 'Fitler Status', value: '' }];
+    filter().forEach(o => {
+      options.push({ label: o.replace('_', ' '), value: o.toLowerCase() });
+    });
+    return options;
+  };
+  const options = OptionList().map((opt: Option, index: number) => {
     return (
       <option value={opt.value} key={index}>
         {opt.label}
@@ -27,8 +29,13 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   });
 
   return (
-    <header>
-      <select name='filter' id='filter' onChange={e => onSelect(e.target.value)}>
+    <header className='Header'>
+      <div className='Header_title'>Real Estate</div>
+      <select
+        className='Header_filter'
+        name='filter'
+        id='filter'
+        onChange={e => onSelect(e.target.value)}>
         {options}
       </select>
     </header>

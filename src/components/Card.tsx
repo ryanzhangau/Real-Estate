@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/card.scss';
 
 export interface Item {
   id: number;
@@ -19,13 +20,15 @@ interface CardProps {
 const Card: React.FC<CardProps> = (props: CardProps) => {
   const { item } = props;
   return (
-    <div>
-      <span>${item.price}</span>
-      <span>{item.status}</span>
-      <img src={item.image} alt={`${item.street} ${item.suburb}`} />
-      <span>{item.street}</span>
-      <span>{item.suburb}</span>
-      <span>
+    <div className='Card_wrap'>
+      <span className='Card_price'>${item.price}</span>
+      <span className='Card_status'>{item.status.replace('_', ' ')}</span>
+      <span className='Card_featured-image'>
+        <img src={item.image} alt={`${item.street} ${item.suburb}`} />
+      </span>
+      <span className='Card_street'>{item.street}</span>
+      <span className='Card_suburb'>{item.suburb}</span>
+      <span className='Card_state'>
         {item.state} {item.postcode}
       </span>
     </div>

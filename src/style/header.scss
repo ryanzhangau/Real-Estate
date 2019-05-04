@@ -1,0 +1,28 @@
+.Header {
+  display: grid;
+  grid-template-columns: 1fr 125px;
+  @media #{medium-up} {
+    grid-template-columns: 1fr 200px;
+  }
+  grid-template-rows: 50px;
+  align-items: center;
+  background-color: #61bfd3;
+  padding: 0 15px;
+}
+
+.Header_title {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.Header_filter {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  option {
+    background-color: #61bfd3;
+  }
+}
