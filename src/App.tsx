@@ -17,7 +17,7 @@ const App: React.FC = () => {
     setIsLoading(true);
     setErr('');
     try {
-      const response = await fetch('/challenge/propertiese', { mode: 'cors' });
+      const response = await fetch('/challenge/properties', { mode: 'cors' });
       const result = await response.json();
       setItems(result);
     } catch (e) {
