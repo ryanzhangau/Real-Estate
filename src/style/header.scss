@@ -1,6 +1,9 @@
 .Header {
   display: grid;
-  grid-template-columns: 1fr 200px;
+  grid-template-columns: 1fr 125px;
+  @media #{medium-up} {
+    grid-template-columns: 1fr 200px;
+  }
   grid-template-rows: 50px;
   align-items: center;
   background-color: #61bfd3;
@@ -9,7 +12,6 @@
 
 .Header_title {
   font-size: 30px;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: white;
 }
