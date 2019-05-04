@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> should render card 1`] = `ShallowWrapper {}`;
+
+exports[`card snapshot verion 1`] = `
+<div className='Card_wrap'>
+  <span className='Card_price'>$1200000</span>
+  <span className='Card_status'>current</span>
+  <span className='Card_featured-image'>
+    <img src="/testimage.jpg" alt="1 test street Test" />
+  </span>
+  <span className='Card_street'>1 test street</span>
+  <span className='Card_suburb'>Test</span>
+  <span className='Card_state'>
+    Victoria 3000
+  </span>
+</div>
+`;
