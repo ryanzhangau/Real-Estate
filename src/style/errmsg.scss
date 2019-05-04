@@ -1,0 +1,20 @@
+.Error_wrap {
+  grid-column: 3;
+  justify-self: center;
+  align-self: center;
+}
+
+.Error_msg {
+  color: #999999;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+button.Error_Action--reload {
+  margin: 20px auto;
+  display: block;
+  border: 0;
+  background-color: transparent;
+  color: #ddd;
+}
